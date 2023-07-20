@@ -1,0 +1,56 @@
+
+  <div id="table-container" class="col-lg-12 mb-4">
+    <h2 class="title">User list</h2>
+    
+    <div  class="content">
+      
+
+      <div class="table-container">
+        <table class="table table-bordered border-primary" id="dataTable" width="100%" cellSpacing="0">
+
+          <thead >
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">Email</th>
+              <th scope="col">Address</th>
+              <th scope="col">action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr *ngFor="let user of myUser">
+              <td>{{user?.name}}</td>
+              <td>{{user?.lastName}}</td>
+              <td>{{user?.phoneNumber}}</td>
+              <td>{{user?.email}}</td>
+              <td>{{user?.address}}</td>
+              <td>
+                <button class="btn btn-sm" [routerLink]="['/updateUser', user?.userId]">
+                  <i class="fas fa-sync-alt"></i><br>
+                </button>
+                <button class="btn btn-sm" (click)="deleteUser(user.userId)">
+                  <i class="fa-solid fa-trash"></i><br>
+                </button>
+
+              </td>
+            </tr>
+
+            
+          </tbody>
+          
+          
+          
+        </table>
+        <a class="btn btn-lg link-danger" [routerLink]="['/form']" >
+          Return to form
+        </a>
+
+        
+        
+
+      </div>
+    </div>
+  </div>

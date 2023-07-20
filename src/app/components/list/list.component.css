@@ -1,0 +1,15 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css');
+
+
+#table-container {
+  max-width: 1000px; 
+  margin: 60px auto;
+}
+
+.title {
+  margin-bottom: 50px; 
+}
+
+.content {
+  margin-bottom: 15px; 
+}

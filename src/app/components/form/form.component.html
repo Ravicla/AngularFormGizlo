@@ -1,0 +1,73 @@
+
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      
+
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+          class="img-fluid" alt="Sample image">
+      </div>
+      
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form [formGroup]="myform" (ngSubmit)="getDataForm()">
+          <h2 style="text-align: center;">{{type}} user</h2>
+
+          <div class="form-floating mb-3">
+            <input type="text" formControlName="name" class="form-control" id="name" placeholder="name">
+            <label for="name">Name</label>
+            <p class="error" *ngIf="checkControl('name', 'required')">Campo requerido</p>
+            <p class="error" *ngIf="checkControl('name', 'minlength')">La longitud del camo tiene que ser al menos de 3 caracteres</p>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="text" formControlName="lastName" class="form-control" id="lastName" placeholder="lastName">
+            <label for="lastName">Last name</label>
+            <p class="error" *ngIf="checkControl('lastName', 'required')">Campo requerido</p>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="text" formControlName="phoneNumber" class="form-control" id="phoneNumber" placeholder="phone number">
+            <label for="phoneNumber">Phone number</label>
+            <p class="error" *ngIf="checkControl('phoneNumber', 'required')">Campo requerido</p>
+            
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="text" formControlName="email" class="form-control" id="email" placeholder="email">
+            <label for="email">Email</label>
+            <p class="error" *ngIf="checkControl('email', 'required')">Campo requerido</p>
+            <p class="error" *ngIf="checkControl('email', 'pattern')">El correo no es valido</p>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="text" formControlName="address" class="form-control" id="address" placeholder="address">
+            <label for="address">Address</label>
+            <p class="error" *ngIf="checkControl('address', 'required')">Campo requerido</p>
+          </div>
+
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+           
+
+            <div class="row mb-3">
+              <div class="col-sm-12">
+                  <input  type="submit" [value]="type" class="btn btn-primary" [disabled]="!myform.valid">
+                  <a [routerLink]="['/list']"></a>
+
+                  <p class="lg fw-bold mt-2 pt-1 mb-0">Go to user <a [routerLink]="['/list']"
+                    class="link-danger">List</a>
+                  </p>
+
+                  
+              </div>
+          </div>
+
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+</section>
